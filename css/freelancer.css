@@ -97,7 +97,15 @@ header img {
 }
 
 header .intro-text .name {
-    display: block;
+    display: inline;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 2em;
+}
+
+header .intro-text .cname {
+    display: inline;
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 700;
@@ -105,8 +113,8 @@ header .intro-text .name {
 }
 
 header .intro-text .skills {
-    font-size: 1.25em;
-    font-weight: 300;
+    font-size: 1.5em;
+    font-weight: 200;
 }
 
 @media (min-width: 768px) {
@@ -115,10 +123,14 @@ header .intro-text .skills {
         padding-bottom: 100px;
     }
     header .intro-text .name {
-        font-size: 4.75em;
+        font-size: 4.5em;
+    }
+    header .intro-text .cname {
+        font-size: 3.5em;
+        vertical-align: super;
     }
     header .intro-text .skills {
-        font-size: 1.75em;
+        font-size: 1.6em;
     }
 }
 
@@ -734,7 +746,7 @@ fieldset[disabled] .btn-success.active {
     margin-top: 5px;
 }
 
-.imageborder{  
-    border-width:1px;  
-    border-style:solid;
+.imageborder {
+    border-width: 1px;
+    border-style: solid;
 }
