@@ -733,3 +733,8 @@ fieldset[disabled] .btn-success.active {
 .timeline-body > p + p {
     margin-top: 5px;
 }
+
+.imageborder{  
+    border-width:1px;  
+    border-style:solid;
+}
