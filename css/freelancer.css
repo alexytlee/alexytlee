@@ -109,11 +109,11 @@ header .intro-text .cname {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 2em;
+    font-size: 1.6em;
 }
 
 header .intro-text .skills {
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: 200;
 }
 
@@ -749,4 +749,18 @@ fieldset[disabled] .btn-success.active {
 .imageborder {
     border-width: 1px;
     border-style: solid;
+}
+
+.tooltip.top .tooltip-inner {
+    background-color: #2C3E50;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.tooltip.top .tooltip-arrow {
+    border-top-color: #2C3E50;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.tooltip-inner {
+    max-width: 350px;
 }
