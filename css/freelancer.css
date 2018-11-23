@@ -82,8 +82,8 @@ hr.star-primary:after {
 
 header {
     text-align: center;
-    background: #222222;
-    color: white;
+    background: white; //
+    color: black; /** Changed from white */
 }
 
 header .container {
@@ -381,9 +381,9 @@ footer .footer-below {
 }
 
 .btn-outline {
-    color: white;
+    color: black;
     font-size: 20px;
-    border: solid 2px white;
+    border: solid 2px black;
     background: transparent;
     transition: all 0.3s ease-in-out;
     margin-top: 15px;
@@ -393,9 +393,9 @@ footer .footer-below {
 .btn-outline:focus,
 .btn-outline:active,
 .btn-outline.active {
-    color: #8D99AE;
-    background: white;
-    border: solid 2px white;
+    color: black;
+    background: #999999;
+    border: solid 2px black;
 }
 
 .btn-primary {
@@ -441,8 +441,8 @@ fieldset[disabled] .btn-primary.active {
 }
 
 .btn-primary .badge {
-    color: #2C3E50;
-    background-color: white;
+    color: black;
+    background-color: black;
 }
 
 .btn-success {
@@ -457,9 +457,9 @@ fieldset[disabled] .btn-primary.active {
 .btn-success:active,
 .btn-success.active,
 .open .dropdown-toggle.btn-success {
-    color: white;
-    background-color: #EDF2F4;
-    border-color: #2C3E50;
+    color: black;
+    background-color: black;
+    border-color: black;
 }
 
 .btn-success:active,
@@ -483,12 +483,12 @@ fieldset[disabled] .btn-success:active,
 .btn-success.disabled.active,
 .btn-success[disabled].active,
 fieldset[disabled] .btn-success.active {
-    background-color: #8D99AE;
-    border-color: #8D99AE;
+    background-color: black;
+    border-color: black;
 }
 
 .btn-success .badge {
-    color: #8D99AE;
+    color: black;
     background-color: white;
 }
 
@@ -496,7 +496,7 @@ fieldset[disabled] .btn-success.active {
     display: inline-block;
     height: 50px;
     width: 50px;
-    border: 2px solid white;
+    border: 2px solid black;
     border-radius: 100%;
     text-align: center;
     font-size: 20px;
