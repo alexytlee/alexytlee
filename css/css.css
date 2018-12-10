@@ -1,0 +1,57 @@
+body {
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	overflow-x: hidden;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	background-color: darkgray;
+}
+
+p {
+	font-size: 15px;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+	color: black;
+	outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+.name {
+	font-family: Montserrat;
+	text-transform: uppercase;
+	font-size: 5em;
+	font-weight: bolder;
+}
+
+.desc {
+	font-family: Lato;
+	font-weight: bold;
+}
+
+.titles {
+	font-family: Lato;
+	font-weight: bold;
+}
+
+.skills {
+	font-family: Lato;
+}
+
+.img-small {
+	display: block;
+	max-width: 100%;
+	margin: auto;
+}
