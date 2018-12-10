@@ -36,6 +36,12 @@ h6 {
 	font-weight: bolder;
 }
 
+@media screen and (max-width: 780px) {
+	.name {
+		font-size: 3em;
+	}
+}
+
 .desc {
 	font-family: Lato;
 	font-weight: bold;
