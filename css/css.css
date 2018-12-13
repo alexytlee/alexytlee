@@ -15,7 +15,7 @@ a:hover,
 a:focus,
 a:active,
 a.active {
-	color: lightslategray;
+	color: black;
 	outline: none;
 	text-decoration: none;
 }
@@ -53,6 +53,10 @@ ul {
 .desc {
 	font-family: Lato;
 	font-weight: bold;
+}
+
+.stackdesc {
+	font-size: 1.1em;
 }
 
 .titles {
