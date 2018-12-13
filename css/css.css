@@ -1,13 +1,13 @@
 body {
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  overflow-x: hidden;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  background-color: darkgray;
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	overflow-x: hidden;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	background-color: darkgray;
 }
 
 p {
-  font-size: 15px;
+	font-size: 15px;
 }
 
 a,
@@ -15,8 +15,9 @@ a:hover,
 a:focus,
 a:active,
 a.active {
-  color: black;
-  outline: none;
+	color: lightslategray;
+	outline: none;
+	text-decoration: none;
 }
 
 h1,
@@ -25,46 +26,46 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-weight: 700;
+	font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	font-weight: 700;
 }
 
 ul {
-  list-style: none;
-  margin-left: 0;
-  padding-left: 0;
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
 }
 
 .name {
-  font-family: Montserrat;
-  text-transform: uppercase;
-  font-size: 5em;
-  font-weight: bolder;
+	font-family: Montserrat;
+	text-transform: uppercase;
+	font-size: 5em;
+	font-weight: bolder;
 }
 
 @media screen and (max-width: 780px) {
-  .name {
-    font-size: 3em;
-  }
+	.name {
+		font-size: 3em;
+	}
 }
 
 .desc {
-  font-family: Lato;
-  font-weight: bold;
+	font-family: Lato;
+	font-weight: bold;
 }
 
 .titles {
-  font-family: Lato;
-  font-weight: bold;
+	font-family: Lato;
+	font-weight: bold;
 }
 
 .skills {
-  font-family: Lato;
+	font-family: Lato;
 }
 
 .img-small {
-  display: block;
-  max-width: 100%;
-  margin: auto;
+	display: block;
+	max-width: 100%;
+	margin: auto;
 }
