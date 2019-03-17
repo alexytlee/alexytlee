@@ -7,7 +7,7 @@ body {
 }
 
 p {
-	font-size: 15px;
+	font-size: 18px;
 }
 
 a,
@@ -26,15 +26,10 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	text-transform: uppercase;
+	font-family: 'Lato', 'Montserrat', 'Helvetica Neue', Helvetica, Arial,
+		sans-serif;
+	text-transform: none;
 	font-weight: 700;
-}
-
-ul {
-	list-style: none;
-	margin-left: 0;
-	padding-left: 0;
 }
 
 .name {
@@ -46,17 +41,8 @@ ul {
 
 @media screen and (max-width: 780px) {
 	.name {
-		font-size: 3em;
+		font-size: 3.8em;
 	}
-}
-
-.desc {
-	font-family: Lato;
-	font-weight: bold;
-}
-
-.stackdesc {
-	font-size: 1.1em;
 }
 
 .titles {
@@ -64,12 +50,23 @@ ul {
 	font-weight: bold;
 }
 
-.skills {
+.hook {
 	font-family: Lato;
+	font-weight: bold;
+	font-size: 28px;
+}
+
+.imgy {
+	max-width: 100%;
+	padding: 10%;
 }
 
 .img-small {
 	display: block;
 	max-width: 100%;
 	margin: auto;
+}
+
+.heading {
+	padding: 2%;
 }
