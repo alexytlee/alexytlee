@@ -131,7 +131,7 @@ a,
 a:hover,
 a:focus,
 a.active {
-	color: palevioletred;
+	color: black;
 	outline: none;
 	text-decoration: none;
 }
