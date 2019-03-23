@@ -130,9 +130,8 @@ p {
 a,
 a:hover,
 a:focus,
-a:active,
 a.active {
-	color: black;
+	color: palevioletred;
 	outline: none;
 	text-decoration: none;
 }
