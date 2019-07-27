@@ -79,10 +79,10 @@ h1 {
 }
 .about {
 	position: absolute;
-	top: 100vh;
+	top: 15vh;
 	left: 50%;
 	right: 10%;
-	padding-bottom: 34vh;
+	padding-bottom: 15vh;
 }
 
 p {
