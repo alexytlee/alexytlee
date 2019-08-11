@@ -5,6 +5,9 @@ a:visited {
 	text-decoration: none;
 	color: #17a2b9;
 }
+a:hover {
+	color: black;
+}
 
 p {
 	font-size: 12px;
