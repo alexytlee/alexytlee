@@ -11,22 +11,22 @@ h1 {
 
 /* unvisited link */
 a:link {
-	color: #0072b1;
+	color: #9cb8b3;
 }
 
 /* visited link */
 a:visited {
-	color: #0072b1;
+	color: #9cb8b3;
 }
 
 /* mouse over link */
 a:hover {
-	color: #0072b1;
+	color: #9cb8b3;
 }
 
 /* selected link */
 a:active {
-	color: #0072b1;
+	color: #9cb8b3;
 }
 
 span,
