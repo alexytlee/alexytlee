@@ -1,4 +1,20 @@
 img {
-  padding: 20px;
-  margin: 10px;
+    padding: 20px;
+    margin: 10px;
+}
+
+body {
+    background-color: #0e1621;
+}
+
+.vision {
+    color: #999999;
+    font-size: 13px;
+    margin: 0px;
+}
+
+.visioner {
+    color: #ce864c;
+    font-size: 13px;
+    margin: 0px;
 }
