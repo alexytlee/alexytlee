@@ -7,14 +7,22 @@ body {
     background-color: #ffffff;
 }
 
+.center-stuff {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
 .vision {
     color: #000000;
-    font-size: 16px;
+    font-size: 20px;
     margin: 0px;
 }
 
 .visioner {
     color: #ce864c;
-    font-size: 13px;
+    font-size: 18px;
     margin: 0px;
 }
