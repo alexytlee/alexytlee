@@ -32,7 +32,7 @@ body {
   align-items: center;
   height: 100%;
   white-space: nowrap;
-  animation: ticker 30s linear infinite;
+  animation: ticker 35s linear infinite;
 }
 
 .ticker-quote {

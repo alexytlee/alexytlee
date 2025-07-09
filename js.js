@@ -78,8 +78,8 @@ function initTicker() {
   // Show first quote immediately
   updateTicker();
 
-  // Rotate quotes every 30 seconds (matches animation duration)
-  setInterval(updateTicker, 30000);
+  // Rotate quotes every 35 seconds (matches animation duration)
+  setInterval(updateTicker, 35000);
 }
 
 // Email obfuscation protection
