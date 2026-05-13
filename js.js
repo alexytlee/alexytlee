@@ -1,246 +1,400 @@
-// Windows 97 Desktop Experience
 
-const dreamIcon = document.getElementById('dreamIcon');
-const dreamWindow = document.getElementById('dreamWindow');
-const closeBtn = document.getElementById('closeBtn');
-const taskbarWindow = document.getElementById('taskbarWindow');
-const titleBar = document.querySelector('.title-bar');
+const aboutCopy = {
+  en: {
+    kicker: 'Software engineer in HK',
+    name: 'Alex Lee',
+    copy:
+      'I like making things people use, and just building fun random things. I am based in Hong Kong. I love math, baseball, supporting the Toronto Blue Jays, vintage motorbikes, especially Hondas and Harleys, vintage cars, and snowboarding in Japan.'
+  },
+  yue: {
+    kicker: '香港軟件工程師',
+    name: 'Alex Lee',
+    copy:
+      '我鍾意整啲人真係會用嘅嘢，亦都鍾意亂諗亂砌啲好玩小項目。我喺香港。我鍾意數學、棒球、支持多倫多藍鳥、復古電單車，特別係本田同哈利、古董車，仲有去日本滑雪。'
+  },
+  zhHant: {
+    kicker: '香港軟體工程師',
+    name: 'Alex Lee',
+    copy:
+      '我喜歡做別人真的會用的東西，也喜歡做各種有趣的隨機小項目。我在香港。我喜歡數學、棒球、支持多倫多藍鳥、復古電單車，特別是本田和哈利、古董車，還有去日本滑雪。'
+  },
+  zhHans: {
+    kicker: '香港软件工程师',
+    name: 'Alex Lee',
+    copy:
+      '我喜欢做别人真的会用的东西，也喜欢做各种有趣的随机小项目。我在香港。我喜欢数学、棒球、支持多伦多蓝鸟、复古电单车，特别是本田和哈利、古董车，还有去日本滑雪。'
+  }
+};
 
-let clickCount = 0;
-let clickTimer = null;
-let isDragging = false;
-let currentX;
-let currentY;
-let initialX;
-let initialY;
-let xOffset = 0;
-let yOffset = 0;
+function setAboutLanguage(lang) {
+  const content = aboutCopy[lang] || aboutCopy.en;
+  document.getElementById('aboutKicker').textContent = content.kicker;
+  document.getElementById('aboutName').textContent = content.name;
+  document.getElementById('aboutCopy').textContent = content.copy;
+  document.querySelectorAll('[data-about-lang]').forEach((button) => {
+    button.classList.toggle('active', button.getAttribute('data-about-lang') === lang);
+  });
+}
 
-// Update time in taskbar
+const apps = [
+  {
+    id: 'cantokeys',
+    name: 'CantoKeys',
+    category: 'Cantonese Keyboard',
+    icon: 'img/apps-webp/cantokeys.webp',
+    fallback: '粵',
+    tagline: 'Jyutping Cantonese keyboard for Traditional Chinese typing.',
+    description:
+      'CantoKeys is a Cantonese-first iOS keyboard for Jyutping input, fast Traditional Chinese candidates, local learning, fuzzy input options, and privacy-first settings.',
+    appStoreUrl: '',
+    pageUrl: 'apps/cantokeys/'
+  },
+  {
+    id: 'solitide',
+    name: 'Solitide',
+    category: 'Card Game',
+    icon: 'img/apps-webp/solitide.webp',
+    fallback: 'A',
+    tagline: 'Clean Klondike solitaire with daily challenges and smart hints.',
+    description:
+      'Solitide is a focused iPhone solitaire game with Draw 1, Draw 3, winnable deals, daily challenges, solver-backed hints, undo, stats, themes, and achievements.',
+    appStoreUrl: '',
+    pageUrl: 'apps/solitide/'
+  },
+  {
+    id: 'monster-blur',
+    name: 'Monster Blur',
+    category: 'Photo & Video',
+    icon: 'img/apps-webp/monster-blur.webp',
+    fallback: '◉',
+    tagline: 'Face blur for privacy-safe photo and video sharing.',
+    description:
+      'Monster Blur helps creators and everyday users detect and mask faces in photos and videos, review before export, and share media with better privacy controls.',
+    appStoreUrl: 'https://apps.apple.com/hk/app/monster-blur-camera/id6747309460',
+    pageUrl: 'apps/monster-blur/'
+  },
+  {
+    id: 'quick-math-duel',
+    name: 'Quick Math Duel',
+    category: 'Educational Game',
+    icon: 'img/apps-webp/quick-math-duel.webp',
+    fallback: '+',
+    tagline: 'Fast mental math games with adaptive difficulty.',
+    description:
+      'Quick Math Duel is a speed-focused math game with Speed Tap, Numpad, True or False, adaptive difficulty, daily challenges, streaks, stats, and leaderboards.',
+    appStoreUrl: 'https://apps.apple.com/app/quick-math-challenge/id6747409960',
+    pageUrl: 'apps/quick-math-duel/'
+  },
+  {
+    id: 'sweeep',
+    name: 'Sweeep',
+    category: 'Photo Utility',
+    icon: 'img/apps-webp/sweeep.webp',
+    fallback: 'S',
+    tagline: 'Swipe-based camera roll cleanup.',
+    description:
+      'Sweeep helps people review photos quickly, queue unwanted shots, confirm the queue, and safely delete from the iOS photo library.',
+    appStoreUrl: 'https://apps.apple.com/hk/app/sweeep/id6747187567',
+    pageUrl: 'apps/sweeep/'
+  },
+  {
+    id: 'mindrocket',
+    name: 'MindRocket',
+    category: 'Lifestyle',
+    icon: 'img/apps-webp/mindrocket.webp',
+    fallback: 'M',
+    tagline: 'Daily quotes, widgets, streaks, and shareable motivation cards.',
+    description:
+      'MindRocket is a daily motivational quotes app with curated authors, editorial portraits, widgets, achievements, streaks, and polished share cards.',
+    appStoreUrl: '',
+    pageUrl: 'apps/mindrocket/'
+  },
+  {
+    id: 'flapeh',
+    name: 'FlapEH!',
+    category: 'Arcade Game',
+    icon: 'img/apps-webp/flapeh.webp',
+    fallback: 'Eh',
+    tagline: 'Canadian flappy beaver arcade with poutine and maple syrup.',
+    description:
+      'FlapEH! is a Canadian arcade game where a beaver speeds up over time, collects poutine to slow down, and grabs maple syrup for invincibility.',
+    appStoreUrl: '',
+    pageUrl: 'apps/flapeh/'
+  },
+  {
+    id: 'snek-quest',
+    name: 'Snek Quest',
+    category: 'Arcade Game',
+    icon: 'img/apps-webp/snek-quest.webp',
+    fallback: 'S',
+    tagline: 'Neon snake with modes, combos, skins, and daily challenges.',
+    description:
+      'Snek Quest is a polished snake game with Classic, Daily, Wrap, and Hard modes, combo scoring, unlockable skins, friend challenges, and leaderboards.',
+    appStoreUrl: '',
+    pageUrl: 'apps/snek-quest/'
+  },
+  {
+    id: 'three3three',
+    name: 'Three3Three',
+    category: 'Puzzle Game',
+    icon: 'img/apps-webp/three3three.webp',
+    fallback: '3',
+    tagline: 'Match-3 puzzle battles with daily and multiplayer modes.',
+    description:
+      'Three3Three is a dark neon match-3 puzzle game with Blitz, Daily, Classic, Endless, and real-time VS Match modes.',
+    appStoreUrl: '',
+    pageUrl: 'apps/three3three/'
+  },
+  {
+    id: 'the-emperor',
+    name: 'The Emperor',
+    category: 'Strategy Game',
+    icon: 'img/apps-webp/the-emperor.webp',
+    fallback: '帝',
+    tagline: 'Dynasty strategy cards built around choice and consequence.',
+    description:
+      'The Emperor is a strategy card game about ruling a dynasty through fast decisions, court pressure, daily edicts, archives, and leaderboard competition.',
+    appStoreUrl: 'https://apps.apple.com/us/app/the-emperors-dynasty/id6747696323',
+    pageUrl: 'apps/the-emperor/'
+  },
+  {
+    id: 'siuhongzit',
+    name: 'SiuHongZit',
+    category: 'Chinese Divination',
+    icon: 'img/apps-webp/siuhongzit.webp',
+    fallback: '卦',
+    tagline: 'Calm Chinese divination based on 邵康節神算卦訣.',
+    description:
+      'SiuHongZit lets users ask a focused question, receive a traditional Chinese divination result, unlock a plain-language explanation, and save or share readings.',
+    appStoreUrl: 'https://apps.apple.com/hk/app/%E9%82%B5%E5%BA%B7%E7%AF%80%E7%A5%9E%E7%AE%97%E5%8D%A6%E8%A8%A3/id1086469673',
+    pageUrl: 'apps/siuhongzit/'
+  },
+  {
+    id: 'cantoswear',
+    name: 'CantoSwear',
+    category: 'Entertainment',
+    icon: 'img/apps-webp/cantoswear.webp',
+    fallback: '講',
+    tagline: 'Cantonese slang and soundboard-style entertainment.',
+    description:
+      'CantoSwear is a lightweight Cantonese entertainment app for Hong Kong slang, funny phrases, and shareable soundboard moments.',
+    appStoreUrl: 'https://apps.apple.com/hk/app/canto-cursing/id1070983856',
+    pageUrl: 'apps/cantoswear/'
+  }
+];
+
+const windows = Array.from(document.querySelectorAll('.window'));
+const titleBars = Array.from(document.querySelectorAll('.window-titlebar'));
+const appGrid = document.getElementById('appGrid');
+const appDetailWindow = document.getElementById('appDetailWindow');
+let topZ = 10;
+let dragging = null;
+let dragStartX = 0;
+let dragStartY = 0;
+let originalX = 0;
+let originalY = 0;
+let lastTap = { id: '', time: 0 };
+
 function updateTime() {
   const now = new Date();
   const hours = now.getHours();
-  const minutes = now.getMinutes();
+  const minutes = String(now.getMinutes()).padStart(2, '0');
   const ampm = hours >= 12 ? 'PM' : 'AM';
   const displayHours = hours % 12 || 12;
-  const displayMinutes = minutes < 10 ? '0' + minutes : minutes;
-  document.getElementById(
-    'time'
-  ).textContent = `${displayHours}:${displayMinutes} ${ampm}`;
+  document.getElementById('time').textContent = `${displayHours}:${minutes} ${ampm}`;
 }
 
+function openWindow(id) {
+  const win = document.getElementById(id);
+  if (!win) return;
+  win.classList.add('active');
+  win.style.zIndex = ++topZ;
+}
+
+function closeWindow(id) {
+  const win = document.getElementById(id);
+  if (!win) return;
+  win.classList.remove('active');
+}
+
+function focusWindow(win) {
+  win.style.zIndex = ++topZ;
+}
+
+function createAppIcon(app) {
+  const button = document.createElement('button');
+  button.className = 'app-icon-button';
+  button.type = 'button';
+  button.setAttribute('data-app-id', app.id);
+
+  const img = document.createElement('img');
+  img.src = app.icon;
+  img.alt = `${app.name} app icon`;
+  img.onerror = () => {
+    img.replaceWith(createFallbackIcon(app));
+  };
+
+  const label = document.createElement('span');
+  label.className = 'app-icon-name';
+  label.textContent = app.name;
+
+  button.append(img, label);
+  return button;
+}
+
+function createFallbackIcon(app) {
+  const fallback = document.createElement('span');
+  fallback.className = 'app-icon-fallback';
+  fallback.textContent = app.fallback;
+  return fallback;
+}
+
+function renderApps() {
+  if (appGrid.children.length > 0) return;
+  apps.forEach((app) => appGrid.appendChild(createAppIcon(app)));
+}
+
+function openAppDetail(app) {
+  document.getElementById('appDetailTitle').textContent = app.name;
+  document.getElementById('appDetailName').textContent = app.name;
+  document.getElementById('appDetailCategory').textContent = app.category;
+  document.getElementById('appDetailTagline').textContent = app.tagline;
+  document.getElementById('appDetailDescription').textContent = app.description;
+
+  const icon = document.getElementById('appDetailIcon');
+  icon.src = app.icon;
+  icon.alt = `${app.name} app icon`;
+
+  const link = document.getElementById('appStoreLink');
+  const pageLink = document.getElementById('appPageLink');
+  if (app.pageUrl) {
+    pageLink.href = app.pageUrl;
+    pageLink.hidden = false;
+  } else {
+    pageLink.hidden = true;
+  }
+
+  if (app.appStoreUrl) {
+    link.href = app.appStoreUrl;
+    link.innerHTML = '<img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=180x60" alt="Download on the App Store" />';
+    link.className = 'app-store-badge-link';
+    link.removeAttribute('aria-disabled');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noreferrer');
+  } else {
+    link.href = '#';
+    link.textContent = 'App Store link coming soon';
+    link.className = 'primary-action disabled';
+    link.removeAttribute('target');
+    link.removeAttribute('rel');
+    link.setAttribute('aria-disabled', 'true');
+  }
+
+  openWindow('appDetailWindow');
+
+  const detailRect = appDetailWindow.getBoundingClientRect();
+  if (detailRect.right > window.innerWidth - 16) {
+    appDetailWindow.style.left = `${Math.max(16, window.innerWidth - detailRect.width - 16)}px`;
+  }
+}
+
+function handleOpenTrigger(trigger) {
+  const id = trigger.getAttribute('data-open-window');
+  if (!id) return;
+  openWindow(id);
+  document.querySelectorAll('.desktop-icon').forEach((icon) => icon.classList.remove('selected'));
+  trigger.classList.add('selected');
+}
+
+function maybeDoubleOpen(trigger) {
+  const id = trigger.id;
+  const now = Date.now();
+  const isDouble = lastTap.id === id && now - lastTap.time < 360;
+  lastTap = { id, time: now };
+  trigger.classList.add('selected');
+  if (isDouble || window.matchMedia('(pointer: coarse)').matches) {
+    handleOpenTrigger(trigger);
+  }
+}
+
+renderApps();
 updateTime();
 setInterval(updateTime, 1000);
 
-// Open window automatically on page load
-window.addEventListener('DOMContentLoaded', function () {
-  setTimeout(() => {
-    openWindow();
-  }, 500); // Small delay for dramatic effect
+windows.forEach((win) => {
+  win.addEventListener('mousedown', () => focusWindow(win));
+  win.addEventListener('touchstart', () => focusWindow(win), { passive: true });
 });
 
-// Double-click detection for icon
-dreamIcon.addEventListener('click', function () {
-  clickCount++;
+titleBars.forEach((bar) => {
+  bar.addEventListener('mousedown', (event) => {
+    if (event.target.closest('button')) return;
+    const win = bar.closest('.window');
+    dragging = win;
+    focusWindow(win);
+    const rect = win.getBoundingClientRect();
+    dragStartX = event.clientX;
+    dragStartY = event.clientY;
+    originalX = rect.left;
+    originalY = rect.top;
+    win.style.left = `${rect.left}px`;
+    win.style.top = `${rect.top}px`;
+    win.style.transform = 'none';
+  });
+});
 
-  if (clickCount === 1) {
-    // Single click - select icon
-    dreamIcon.classList.add('selected');
+document.addEventListener('mousemove', (event) => {
+  if (!dragging) return;
+  event.preventDefault();
+  dragging.style.left = `${originalX + event.clientX - dragStartX}px`;
+  dragging.style.top = `${originalY + event.clientY - dragStartY}px`;
+});
 
-    clickTimer = setTimeout(() => {
-      clickCount = 0;
-    }, 300);
-  } else if (clickCount === 2) {
-    // Double click - open window
-    clearTimeout(clickTimer);
-    clickCount = 0;
-    openWindow();
+document.addEventListener('mouseup', () => {
+  dragging = null;
+});
+
+document.addEventListener('click', (event) => {
+
+  const languageButton = event.target.closest('[data-about-lang]');
+  if (languageButton) {
+    setAboutLanguage(languageButton.getAttribute('data-about-lang'));
+    return;
+  }
+  const close = event.target.closest('[data-close-window]');
+  if (close) {
+    closeWindow(close.getAttribute('data-close-window'));
+    return;
+  }
+
+  const minimize = event.target.closest('[data-minimize-window]');
+  if (minimize) {
+    closeWindow(minimize.getAttribute('data-minimize-window'));
+    return;
+  }
+
+
+  const appButton = event.target.closest('.app-icon-button');
+  if (appButton) {
+    const app = apps.find((candidate) => candidate.id === appButton.getAttribute('data-app-id'));
+    if (app) openAppDetail(app);
+    return;
+  }
+
+  const openTrigger = event.target.closest('[data-open-window]');
+  if (openTrigger && !openTrigger.classList.contains('desktop-icon')) {
+    handleOpenTrigger(openTrigger);
+    return;
+  }
+
+  const desktopIcon = event.target.closest('.desktop-icon');
+  if (desktopIcon) {
+    maybeDoubleOpen(desktopIcon);
+    return;
+  }
+
+  if (event.target.closest('.desktop-area')) {
+    document.querySelectorAll('.desktop-icon').forEach((icon) => icon.classList.remove('selected'));
   }
 });
 
-// Open window
-function openWindow() {
-  dreamWindow.classList.add('active');
-  taskbarWindow.style.display = 'flex';
-  taskbarWindow.classList.add('active');
-}
-
-// Close window
-closeBtn.addEventListener('click', function () {
-  dreamWindow.classList.remove('active');
-  taskbarWindow.style.display = 'none';
-  taskbarWindow.classList.remove('active');
-  dreamIcon.classList.remove('selected');
-});
-
-// Taskbar item click
-taskbarWindow.addEventListener('click', function () {
-  if (dreamWindow.classList.contains('active')) {
-    dreamWindow.classList.remove('active');
-    taskbarWindow.classList.remove('active');
-  } else {
-    dreamWindow.classList.add('active');
-    taskbarWindow.classList.add('active');
-  }
-});
-
-// Window dragging
-titleBar.addEventListener('mousedown', dragStart);
-titleBar.addEventListener('touchstart', dragStart);
-
-function dragStart(e) {
-  if (e.target.tagName === 'BUTTON') return;
-
-  if (e.type === 'touchstart') {
-    initialX = e.touches[0].clientX - xOffset;
-    initialY = e.touches[0].clientY - yOffset;
-  } else {
-    initialX = e.clientX - xOffset;
-    initialY = e.clientY - yOffset;
-  }
-
-  if (
-    e.target === titleBar ||
-    e.target === titleBar.querySelector('.title-bar-text')
-  ) {
-    isDragging = true;
-  }
-}
-
-document.addEventListener('mousemove', drag);
-document.addEventListener('touchmove', drag);
-
-function drag(e) {
-  if (isDragging) {
-    e.preventDefault();
-
-    if (e.type === 'touchmove') {
-      currentX = e.touches[0].clientX - initialX;
-      currentY = e.touches[0].clientY - initialY;
-    } else {
-      currentX = e.clientX - initialX;
-      currentY = e.clientY - initialY;
-    }
-
-    xOffset = currentX;
-    yOffset = currentY;
-
-    setTranslate(currentX, currentY, dreamWindow);
-  }
-}
-
-function setTranslate(xPos, yPos, el) {
-  el.style.transform = `translate(calc(-50% + ${xPos}px), calc(-50% + ${yPos}px))`;
-}
-
-document.addEventListener('mouseup', dragEnd);
-document.addEventListener('touchend', dragEnd);
-
-function dragEnd(e) {
-  initialX = currentX;
-  initialY = currentY;
-  isDragging = false;
-}
-
-// Deselect icon when clicking desktop
-document.querySelector('.desktop').addEventListener('click', function (e) {
-  if (e.target === this) {
-    dreamIcon.classList.remove('selected');
-  }
-});
-
-// Easter egg: Minimize button (just hides window for now)
-document.querySelector('.minimize-btn').addEventListener('click', function () {
-  dreamWindow.classList.remove('active');
-  taskbarWindow.classList.remove('active');
-});
-
-// Maximize button (just for show - no functionality)
-document.querySelector('.maximize-btn').addEventListener('click', function () {
-  // Could add maximize functionality here
-  console.log('Maximize clicked');
-});
-
-// Start Menu functionality
-const startButton = document.getElementById('startButton');
-const startMenu = document.getElementById('startMenu');
-const contactItem = document.getElementById('contactItem');
-const contactSubmenu = document.getElementById('contactSubmenu');
-const emailItem = document.getElementById('emailItem');
-
-let startMenuOpen = false;
-let contactSubmenuOpen = false;
-
-// Toggle Start Menu
-startButton.addEventListener('click', function (e) {
-  e.stopPropagation();
-  startMenuOpen = !startMenuOpen;
-
-  if (startMenuOpen) {
-    startMenu.classList.add('active');
-  } else {
-    startMenu.classList.remove('active');
-    contactSubmenu.classList.remove('active');
-    contactSubmenuOpen = false;
-  }
-});
-
-// Show contact submenu
-contactItem.addEventListener('mouseenter', function () {
-  contactSubmenu.classList.add('active');
-  contactSubmenuOpen = true;
-});
-
-contactItem.addEventListener('click', function (e) {
-  e.stopPropagation();
-  contactSubmenu.classList.add('active');
-  contactSubmenuOpen = true;
-});
-
-// Hide submenus when leaving the menu area
-startMenu.addEventListener('mouseleave', function () {
-  setTimeout(() => {
-    if (!contactSubmenuOpen) {
-      contactSubmenu.classList.remove('active');
-    }
-  }, 100);
-});
-
-contactSubmenu.addEventListener('mouseleave', function () {
-  contactSubmenu.classList.remove('active');
-  contactSubmenuOpen = false;
-});
-
-// Email obfuscation - click to open email client
-emailItem.addEventListener('click', function (e) {
-  e.preventDefault();
-  e.stopPropagation();
-
-  const user = this.getAttribute('data-user');
-  const domain = this.getAttribute('data-domain');
-  const atSymbol = String.fromCharCode(64); // @
-  const email = user + atSymbol + domain;
-
-  window.location.href = 'mailto:' + email;
-
-  // Close menus
-  startMenu.classList.remove('active');
-  contactSubmenu.classList.remove('active');
-  startMenuOpen = false;
-  contactSubmenuOpen = false;
-});
-
-// Close Start Menu when clicking outside
-document.addEventListener('click', function (e) {
-  if (
-    startMenuOpen &&
-    !startMenu.contains(e.target) &&
-    !contactSubmenu.contains(e.target) &&
-    e.target !== startButton
-  ) {
-    startMenu.classList.remove('active');
-    contactSubmenu.classList.remove('active');
-    startMenuOpen = false;
-    contactSubmenuOpen = false;
-  }
-});
