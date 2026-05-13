@@ -4,7 +4,7 @@ const aboutCopy = {
     kicker: 'Dreamer',
     name: 'Alex Lee',
     copy:
-      'I like making things people use, and just building fun random things. I am based in Hong Kong. I love math, baseball, supporting the Toronto Blue Jays, vintage motorbikes, especially Hondas and Harleys, vintage cars, and snowboarding in Japan.'
+      'I like making things people use, and just building fun random things. I am based in Hong Kong. I build across TypeScript, Python, Swift, Go, and modern web/backend stacks. I love math, baseball, supporting the Toronto Blue Jays, vintage motorbikes, especially Hondas and Harleys, vintage cars, and snowboarding in Japan.'
   },
   yue: {
     kicker: '唔係鹹魚',
@@ -159,15 +159,63 @@ const apps = [
   },
   {
     id: 'siuhongzit',
-    name: 'SiuHongZit',
+    name: '邵康節神算卦訣',
     category: 'Chinese Divination',
     icon: 'img/apps-webp/siuhongzit.webp',
     fallback: '卦',
     tagline: 'Calm Chinese divination based on 邵康節神算卦訣.',
     description:
-      'SiuHongZit lets users ask a focused question, receive a traditional Chinese divination result, unlock a plain-language explanation, and save or share readings.',
+      '邵康節神算卦訣 lets users ask a focused question, receive a traditional Chinese divination result, unlock a plain-language explanation, and save or share readings.',
     appStoreUrl: 'https://apps.apple.com/hk/app/%E9%82%B5%E5%BA%B7%E7%AF%80%E7%A5%9E%E7%AE%97%E5%8D%A6%E8%A8%A3/id1086469673',
     pageUrl: 'apps/siuhongzit/'
+  },
+  {
+    id: 'blockade',
+    name: 'Blockade',
+    category: 'Puzzle Game',
+    icon: 'img/apps-webp/blockade.webp',
+    fallback: 'B',
+    tagline: 'Polished block puzzle with multiple modes, power-ups, and daily progression.',
+    description:
+      'Blockade is a polished block puzzle game inspired by block blast gameplay, with Classic, Easy, Power-Up, Quest, and Zen modes, plus leaderboards, streaks, and themes.',
+    appStoreUrl: '',
+    pageUrl: 'apps/blockade/'
+  },
+  {
+    id: 'capygotchi',
+    name: 'Capygotchi',
+    category: 'Virtual Pet',
+    icon: 'img/apps-webp/capygotchi.webp',
+    fallback: 'C',
+    tagline: 'Cozy capybara companion with widgets, rituals, and walking-based rewards.',
+    description:
+      'Capygotchi is a cozy capybara companion app with widget-first care, gentle daily rituals, walking adventure rewards, collectibles, and progression designed for calm daily return.',
+    appStoreUrl: '',
+    pageUrl: 'apps/capygotchi/'
+  },
+  {
+    id: 'near-play',
+    name: 'Near Play',
+    category: 'Local Multiplayer',
+    icon: 'img/apps-webp/near-play.webp',
+    fallback: 'NP',
+    tagline: 'Offline two-player game collection with nearby local play.',
+    description:
+      'Near Play is an offline two-player game collection for short local sessions using MultipeerConnectivity over nearby WiFi and Bluetooth, with no internet or account required.',
+    appStoreUrl: '',
+    pageUrl: 'apps/near-play/'
+  },
+  {
+    id: 'nuanyan',
+    name: '暖言',
+    category: 'Wellbeing',
+    icon: 'img/apps-webp/nuanyan.webp',
+    fallback: '暖',
+    tagline: 'Gentle language-centric wellbeing app with supportive short-form content.',
+    description:
+      '暖言 is a gentle language-centric wellbeing app designed for supportive short-form reading moments with low cognitive load and high daily return potential.',
+    appStoreUrl: '',
+    pageUrl: 'apps/nuanyan/'
   },
   {
     id: 'cantoswear',
@@ -230,6 +278,9 @@ function createAppIcon(app) {
   const img = document.createElement('img');
   img.src = app.icon;
   img.alt = `${app.name} app icon`;
+  img.loading = 'lazy';
+  img.width = 68;
+  img.height = 68;
   img.onerror = () => {
     img.replaceWith(createFallbackIcon(app));
   };
@@ -237,8 +288,11 @@ function createAppIcon(app) {
   const label = document.createElement('span');
   label.className = 'app-icon-name';
   label.textContent = app.name;
+  const summary = document.createElement('span');
+  summary.className = 'app-icon-summary';
+  summary.textContent = `${app.category}. ${app.tagline}`;
 
-  button.append(img, label);
+  button.append(img, label, summary);
   return button;
 }
 
@@ -250,8 +304,10 @@ function createFallbackIcon(app) {
 }
 
 function renderApps() {
-  if (appGrid.children.length > 0) return;
+  appGrid.innerHTML = '';
   apps.forEach((app) => appGrid.appendChild(createAppIcon(app)));
+  const appCount = document.getElementById('appCountPill');
+  if (appCount) appCount.textContent = `${apps.length} items`;
 }
 
 function openAppDetail(app) {
@@ -264,6 +320,9 @@ function openAppDetail(app) {
   const icon = document.getElementById('appDetailIcon');
   icon.src = app.icon;
   icon.alt = `${app.name} app icon`;
+  icon.onerror = () => {
+    icon.src = 'img/alexlee.webp';
+  };
 
   const link = document.getElementById('appStoreLink');
   const pageLink = document.getElementById('appPageLink');

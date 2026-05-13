@@ -2,22 +2,30 @@
 <html lang="en-HK">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta
       name="description"
       content="Alex Lee is a Hong Kong software engineer building mobile apps, web products, games, and digital tools."
     />
-    <meta property="og:title" content="Alex Lee | Hong Kong Software Engineer" />
+    <meta property="og:title" content="Alex Lee (alexytlee) | Hong Kong Software Engineer" />
     <meta
       property="og:description"
       content="Explore Alex Lee's apps, games, and digital tools built across mobile, web, and modern software stacks."
     />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.alexytlee.com/" />
+    <meta property="og:site_name" content="alexytlee" />
     <meta property="og:image" content="https://www.alexytlee.com/img/alexlee.webp" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Alex Lee (alexytlee) | Hong Kong Software Engineer" />
+    <meta
+      name="twitter:description"
+      content="Explore Alex Lee's apps, games, and digital tools built across mobile, web, and modern software stacks."
+    />
+    <meta name="twitter:image" content="https://www.alexytlee.com/img/alexlee.webp" />
     <link rel="canonical" href="https://www.alexytlee.com/" />
     <link rel="stylesheet" href="styles.css" />
-    <title>Alex Lee | Hong Kong Software Engineer</title>
+    <title>Alex Lee (alexytlee) | Hong Kong Software Engineer</title>
     <link rel="shortcut icon" href="/favicon_pika.ico" type="image/x-icon" />
     <link rel="icon" href="/favicon_pika.ico" type="image/x-icon" />
   </head>
@@ -33,7 +41,7 @@
       </header>
 
       <main class="desktop-area">
-        <h1 class="seo-heading">Alex Lee — Hong Kong software engineer building mobile apps, web products, games, and digital tools.</h1>
+        <h1 class="seo-heading">Alex Lee (alexytlee) — Hong Kong software engineer building mobile apps, web products, backend systems, games, and digital tools.</h1>
 
         <button class="desktop-icon selected" id="dreamIcon" data-open-window="dreamWindow" aria-label="Open Stephen Chow quote window">
           <span class="file-icon file-icon-text">夢</span>
@@ -55,10 +63,10 @@
             <div class="window-title">About Alex Lee</div>
           </div>
           <div class="window-body about-body">
-            <img class="about-avatar" src="img/alexlee.webp" alt="Cartoon portrait of Alex Lee" />
+            <img class="about-avatar" src="img/alexlee.webp" alt="Cartoon portrait of Alex Lee" loading="eager" width="96" height="96" />
             <div>
               <div class="about-heading-row">
-                <p class="kicker" id="aboutKicker">Dreamer/Not a salted fish</p>
+                <p class="kicker" id="aboutKicker">Dreamer</p>
                 <div class="language-toggle" aria-label="About language">
                   <button class="language-option active" type="button" data-about-lang="en">EN</button>
                   <button class="language-option" type="button" data-about-lang="yue">粵</button>
@@ -68,8 +76,9 @@
               </div>
               <h2 id="aboutName">Alex Lee</h2>
               <p id="aboutCopy">
-                I like making things people use, and just building fun random things. I am based in Hong Kong. I love math, baseball, supporting the Toronto Blue Jays, vintage motorbikes, especially Hondas and Harleys, vintage cars, and snowboarding in Japan.
+                I like making things people use, and just building fun random things. I am based in Hong Kong. I build across TypeScript, Python, Swift, Go, and modern web/backend stacks. I love math, baseball, supporting the Toronto Blue Jays, vintage motorbikes, especially Hondas and Harleys, vintage cars, and snowboarding in Japan.
               </p>
+              <p class="kicker">Now building: Blockade, Capygotchi, Near Play, and 暖言.</p>
             </div>
           </div>
         </section>
@@ -85,7 +94,7 @@
           </div>
           <div class="window-body dream-body">
             <figure class="dream-card">
-              <img src="img/stephen-chow.webp" alt="Stephen Chow quote illustration" />
+              <img src="img/stephen-chow.webp" alt="Stephen Chow quote illustration" loading="lazy" width="560" height="560" />
               <figcaption>
                 <p class="quote">做人如果冇夢想，<br />同條咸魚有咩分别呀？</p>
                 <p class="author">— 周星馳</p>
@@ -105,72 +114,11 @@
           </div>
           <div class="finder-toolbar">
             <span class="toolbar-pill active">Icons</span>
-            <span class="toolbar-pill">12 items</span>
+            <span class="toolbar-pill" id="appCountPill">16 items</span>
             <span class="toolbar-status">apps, games, tools, experiments</span>
           </div>
           <div class="window-body finder-body">
-            <div class="app-grid" id="appGrid" aria-label="App portfolio icons">
-              <button class="app-icon-button" type="button" data-app-id="cantokeys">
-                <img src="img/apps-webp/cantokeys.webp" alt="CantoKeys app icon" />
-                <span class="app-icon-name">CantoKeys</span>
-                <span class="app-icon-summary">Cantonese Keyboard. Jyutping Cantonese keyboard for Traditional Chinese typing.</span>
-              </button>
-              <button class="app-icon-button" type="button" data-app-id="solitide">
-                <img src="img/apps-webp/solitide.webp" alt="Solitide app icon" />
-                <span class="app-icon-name">Solitide</span>
-                <span class="app-icon-summary">Card Game. Clean Klondike solitaire with daily challenges and smart hints.</span>
-              </button>
-              <button class="app-icon-button" type="button" data-app-id="monster-blur">
-                <img src="img/apps-webp/monster-blur.webp" alt="Monster Blur app icon" />
-                <span class="app-icon-name">Monster Blur</span>
-                <span class="app-icon-summary">Photo & Video. Face blur for privacy-safe photo and video sharing.</span>
-              </button>
-              <button class="app-icon-button" type="button" data-app-id="quick-math-duel">
-                <img src="img/apps-webp/quick-math-duel.webp" alt="Quick Math Duel app icon" />
-                <span class="app-icon-name">Quick Math Duel</span>
-                <span class="app-icon-summary">Educational Game. Fast mental math games with adaptive difficulty.</span>
-              </button>
-              <button class="app-icon-button" type="button" data-app-id="sweeep">
-                <img src="img/apps-webp/sweeep.webp" alt="Sweeep app icon" />
-                <span class="app-icon-name">Sweeep</span>
-                <span class="app-icon-summary">Photo Utility. Swipe-based camera roll cleanup.</span>
-              </button>
-              <button class="app-icon-button" type="button" data-app-id="mindrocket">
-                <img src="img/apps-webp/mindrocket.webp" alt="MindRocket app icon" />
-                <span class="app-icon-name">MindRocket</span>
-                <span class="app-icon-summary">Lifestyle. Daily quotes, widgets, streaks, and shareable motivation cards.</span>
-              </button>
-              <button class="app-icon-button" type="button" data-app-id="flapeh">
-                <img src="img/apps-webp/flapeh.webp" alt="FlapEH! app icon" />
-                <span class="app-icon-name">FlapEH!</span>
-                <span class="app-icon-summary">Arcade Game. Canadian flappy beaver arcade with poutine and maple syrup.</span>
-              </button>
-              <button class="app-icon-button" type="button" data-app-id="snek-quest">
-                <img src="img/apps-webp/snek-quest.webp" alt="Snek Quest app icon" />
-                <span class="app-icon-name">Snek Quest</span>
-                <span class="app-icon-summary">Arcade Game. Neon snake with modes, combos, skins, and daily challenges.</span>
-              </button>
-              <button class="app-icon-button" type="button" data-app-id="three3three">
-                <img src="img/apps-webp/three3three.webp" alt="Three3Three app icon" />
-                <span class="app-icon-name">Three3Three</span>
-                <span class="app-icon-summary">Puzzle Game. Match-3 puzzle battles with daily and multiplayer modes.</span>
-              </button>
-              <button class="app-icon-button" type="button" data-app-id="the-emperor">
-                <img src="img/apps-webp/the-emperor.webp" alt="The Emperor app icon" />
-                <span class="app-icon-name">The Emperor</span>
-                <span class="app-icon-summary">Strategy Game. Dynasty strategy cards built around choice and consequence.</span>
-              </button>
-              <button class="app-icon-button" type="button" data-app-id="siuhongzit">
-                <img src="img/apps-webp/siuhongzit.webp" alt="SiuHongZit app icon" />
-                <span class="app-icon-name">SiuHongZit</span>
-                <span class="app-icon-summary">Chinese Divination. Calm Chinese divination based on 邵康節神算卦訣.</span>
-              </button>
-              <button class="app-icon-button" type="button" data-app-id="cantoswear">
-                <img src="img/apps-webp/cantoswear.webp" alt="CantoSwear app icon" />
-                <span class="app-icon-name">CantoSwear</span>
-                <span class="app-icon-summary">Entertainment. Cantonese slang and soundboard-style entertainment.</span>
-              </button>
-            </div>
+            <div class="app-grid" id="appGrid" aria-label="App portfolio icons"></div>
           </div>
           <div class="finder-statusbar">Click an app icon for details. App Store links will be added as listings go live.</div>
         </section>
@@ -210,6 +158,7 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Alex Lee",
+        "alternateName": "alexytlee",
         "jobTitle": "Software Engineer",
         "description": "Hong Kong software engineer building mobile apps, web products, games, and digital tools.",
         "url": "https://www.alexytlee.com",
@@ -219,7 +168,7 @@
           "addressCountry": "HK"
         },
         "sameAs": ["https://linktr.ee/alexytlee"],
-        "knowsAbout": ["software engineering", "mobile development", "web development", "backend development", "game development", "digital tools"]
+        "knowsAbout": ["software engineering", "typescript", "python", "swift", "go", "mobile development", "web development", "backend development", "game development", "digital tools"]
       }
     </script>
     <script src="js.js"></script>
