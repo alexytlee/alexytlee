@@ -305,7 +305,10 @@ function createFallbackIcon(app) {
 
 function renderApps() {
   appGrid.innerHTML = '';
-  apps.forEach((app) => appGrid.appendChild(createAppIcon(app)));
+  const sortedApps = [...apps].sort((a, b) =>
+    a.name.localeCompare(b.name, 'en', { sensitivity: 'base', numeric: true })
+  );
+  sortedApps.forEach((app) => appGrid.appendChild(createAppIcon(app)));
   const appCount = document.getElementById('appCountPill');
   if (appCount) appCount.textContent = `${apps.length} items`;
 }
