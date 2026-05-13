@@ -1045,11 +1045,15 @@ button {
 
 @media (min-width: 1180px) {
   .finder-window {
-    width: 900px;
+    width: min(980px, calc(100vw - 110px));
   }
 
   .finder-window .app-grid {
     grid-template-columns: repeat(6, 1fr);
+  }
+
+  .finder-body {
+    max-height: min(620px, calc(100vh - 110px));
   }
 }
 
@@ -1077,7 +1081,7 @@ button {
 }
 
 
-@media (min-width: 761px) {
+@media (max-width: 1179px) and (min-width: 761px) {
   .finder-window {
     width: min(620px, calc(100vw - 220px));
   }

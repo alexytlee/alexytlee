@@ -1,7 +1,7 @@
 
 const aboutCopy = {
   en: {
-    kicker: 'Dreamer',
+    kicker: 'Dreamer/Not a salted fish',
     name: 'Alex Lee',
     copy:
       'I like making things people use, and just building fun random things. I am based in Hong Kong. I build across TypeScript, Python, Swift, Go, and modern web/backend stacks. I love math, baseball, supporting the Toronto Blue Jays, vintage motorbikes, especially Hondas and Harleys, vintage cars, and snowboarding in Japan.'
