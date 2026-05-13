@@ -235,6 +235,7 @@ const windows = Array.from(document.querySelectorAll('.window'));
 const titleBars = Array.from(document.querySelectorAll('.window-titlebar'));
 const appGrid = document.getElementById('appGrid');
 const appDetailWindow = document.getElementById('appDetailWindow');
+const aboutWindow = document.getElementById('aboutWindow');
 let topZ = 10;
 let dragging = null;
 let dragStartX = 0;
@@ -380,6 +381,9 @@ function maybeDoubleOpen(trigger) {
 }
 
 renderApps();
+if (aboutWindow && aboutWindow.classList.contains('active')) {
+  focusWindow(aboutWindow);
+}
 updateTime();
 setInterval(updateTime, 1000);
 
