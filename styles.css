@@ -1,3 +1,11 @@
+@font-face {
+  font-family: ChicagoKare;
+  src: url("fonts/ChicagoFLFRegular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -9,7 +17,7 @@ body {
 }
 
 body {
-  font-family: Geneva, "Lucida Grande", "Helvetica Neue", Arial, sans-serif;
+  font-family: ChicagoKare, Chicago, Geneva, "Lucida Grande", "Helvetica Neue", Arial, sans-serif;
   overflow: hidden;
   color: #121212;
   user-select: none;
@@ -57,7 +65,7 @@ button {
   background: linear-gradient(#f7f7f7, #d4d4d4);
   border-bottom: 1px solid #7f7f7f;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .menu-title,
@@ -201,7 +209,7 @@ button {
 .icon-label {
   max-width: 78px;
   padding: 2px 4px;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.15;
   text-align: center;
   word-break: break-word;
@@ -282,7 +290,7 @@ button {
 
 .window-title {
   text-align: center;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   color: #2d2d2d;
   white-space: nowrap;
@@ -1250,4 +1258,12 @@ button {
     flex-direction: column-reverse;
     gap: 8px;
   }
+}
+
+.about-body p:not(.kicker),
+#aboutCopy {
+  font-family: "Lucida Grande", "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 400;
 }
