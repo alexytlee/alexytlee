@@ -218,16 +218,16 @@ const apps = [
     pageUrl: 'apps/nuanyan/'
   },
   {
-    id: 'cantoswear',
-    name: 'CantoSwear',
+    id: 'cantocursing',
+    name: 'Canto Cursing',
     category: 'Entertainment',
-    icon: 'img/apps-webp/cantoswear.webp',
+    icon: 'img/apps-webp/cantocursing.webp',
     fallback: '講',
     tagline: 'Cantonese slang and soundboard-style entertainment.',
     description:
-      'CantoSwear is a lightweight Cantonese entertainment app for Hong Kong slang, funny phrases, and shareable soundboard moments.',
+      'Canto Cursing is a lightweight Cantonese entertainment app for Hong Kong slang, funny phrases, and shareable soundboard moments.',
     appStoreUrl: 'https://apps.apple.com/hk/app/canto-cursing/id1070983856',
-    pageUrl: 'apps/cantoswear/'
+    pageUrl: 'apps/cantocursing/'
   }
 ];
 
