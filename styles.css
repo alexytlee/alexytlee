@@ -133,6 +133,7 @@ button {
   color: white;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.75);
   cursor: default;
+  text-decoration: none;
 }
 
 .desktop-icon:hover .file-icon {
@@ -155,6 +156,12 @@ button {
 .apps-desktop-icon {
   top: 120px;
   left: 26px;
+}
+
+.mail-desktop-icon {
+  top: 206px;
+  left: 26px;
+  cursor: pointer;
 }
 
 .file-icon {
@@ -208,6 +215,39 @@ button {
   border-radius: 3px 3px 0 0;
   background: #ffd86d;
   transform: translateY(-9px);
+}
+
+.file-icon-mail {
+  border: 1px solid #989898;
+  border-radius: 1px;
+  background: linear-gradient(135deg, #fff 0%, #f0f0f0 72%, #d7d7d7 100%);
+  text-shadow: none;
+}
+
+.file-icon-mail::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  border-top: 14px solid #dfe8f6;
+  border-left: 14px solid transparent;
+  width: 0;
+  height: 0;
+}
+
+.file-icon-mail::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 16px;
+  width: 32px;
+  height: 20px;
+  border: 1px solid #6f87ad;
+  border-radius: 2px;
+  background:
+    linear-gradient(145deg, transparent 47%, #8da4c8 48%, #8da4c8 52%, transparent 53%),
+    linear-gradient(35deg, transparent 47%, #8da4c8 48%, #8da4c8 52%, transparent 53%),
+    linear-gradient(#f2f6ff, #d9e4f8);
 }
 
 .icon-label {
@@ -1276,4 +1316,17 @@ button {
   font-size: 15px;
   line-height: 1.5;
   font-weight: 400;
+}
+
+.about-email-line {
+  margin: 10px 0 0;
+}
+
+.about-email-line a {
+  color: #1f5fae;
+  text-decoration: none;
+}
+
+.about-email-line a:hover {
+  text-decoration: underline;
 }

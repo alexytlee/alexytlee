@@ -35,6 +35,7 @@
       <header class="menu-bar" aria-label="Main menu">
         <button class="menu-title" id="aboutMenuButton" data-open-window="aboutWindow">Alex Lee</button>
         <button class="menu-button" data-open-window="appsWindow">Apps</button>
+        <a class="menu-link" href="mailto:hi@alexytlee.com">Contact</a>
         <button class="menu-button" data-open-window="dreamWindow">夢想</button>
         <div class="menu-spacer"></div>
         <span class="menu-clock" id="time">12:00 PM</span>
@@ -52,6 +53,10 @@
           <span class="file-icon file-icon-folder"></span>
           <span class="icon-label">Apps</span>
         </button>
+        <a class="desktop-icon mail-desktop-icon" id="mailIcon" href="mailto:hi@alexytlee.com" aria-label="Email hi@alexytlee.com">
+          <span class="file-icon file-icon-mail" aria-hidden="true"></span>
+          <span class="icon-label">Mail</span>
+        </a>
 
         <section class="window about-window active" id="aboutWindow" aria-label="About Alex Lee window">
           <div class="window-titlebar">
@@ -78,6 +83,7 @@
               <p id="aboutCopy">
                 I like making things people use, and just building fun random things. I am based in Hong Kong. I build across TypeScript, Python, Swift, Go, and modern web/backend stacks. I love math, baseball, supporting the Toronto Blue Jays, vintage motorbikes, especially Hondas and Harleys, vintage cars, and snowboarding in Japan.
               </p>
+              <p class="about-email-line"><span id="aboutEmailLabel">Email:</span> <a id="aboutEmailLink" href="mailto:hi@alexytlee.com">hi@alexytlee.com</a></p>
             </div>
           </div>
         </section>

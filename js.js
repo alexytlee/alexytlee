@@ -3,24 +3,28 @@ const aboutCopy = {
   en: {
     kicker: 'Dreamer/Not a salted fish',
     name: 'Alex Lee',
+    emailLabel: 'Email:',
     copy:
       'I like making things people use, and just building fun random things. I am based in Hong Kong. I build across TypeScript, Python, Swift, Go, and modern web/backend stacks. I love math, baseball, supporting the Toronto Blue Jays, vintage motorbikes, especially Hondas and Harleys, vintage cars, and snowboarding in Japan.'
   },
   yue: {
     kicker: '唔係鹹魚',
     name: 'Alex Lee',
+    emailLabel: '電郵：',
     copy:
       '我鍾意整啲人真係會用嘅嘢，亦都鍾意亂諗亂砌啲好玩小項目。我喺香港。我鍾意數學、棒球、支持多倫多藍鳥、復古電單車，特別係本田同哈雷、古董車，仲有去日本滑雪。'
   },
   zhHant: {
     kicker: '不是鹹魚',
     name: 'Alex Lee',
+    emailLabel: '電子郵件：',
     copy:
       '我喜歡做別人真的會用的東西，也喜歡做各種有趣的隨機小項目。我在香港。我喜歡數學、棒球、支持多倫多藍鳥、復古電單車，特別是本田和哈雷、古董車，還有去日本滑雪。'
   },
   zhHans: {
     kicker: '不是咸鱼',
     name: 'Alex Lee',
+    emailLabel: '电子邮箱：',
     copy:
       '我喜欢做别人真的会用的东西，也喜欢做各种有趣的随机小项目。我在香港。我喜欢数学、棒球、支持多伦多蓝鸟、复古电单车，特别是本田和哈雷、古董车，还有去日本滑雪。'
   }
@@ -31,6 +35,7 @@ function setAboutLanguage(lang) {
   document.getElementById('aboutKicker').textContent = content.kicker;
   document.getElementById('aboutName').textContent = content.name;
   document.getElementById('aboutCopy').textContent = content.copy;
+  document.getElementById('aboutEmailLabel').textContent = content.emailLabel;
   document.querySelectorAll('[data-about-lang]').forEach((button) => {
     button.classList.toggle('active', button.getAttribute('data-about-lang') === lang);
   });
