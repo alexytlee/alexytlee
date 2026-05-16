@@ -63,7 +63,7 @@ const apps = [
     tagline: 'Clean Klondike solitaire with daily challenges and smart hints.',
     description:
       'Solitide is a focused iPhone solitaire game with Draw 1, Draw 3, winnable deals, daily challenges, solver-backed hints, undo, stats, themes, and achievements.',
-    appStoreUrl: '',
+    appStoreUrl: 'https://apps.apple.com/us/app/solitide/id6769714217',
     pageUrl: 'apps/solitide/'
   },
   {
