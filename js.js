@@ -51,7 +51,7 @@ const apps = [
     tagline: 'Jyutping Cantonese keyboard for Traditional Chinese typing.',
     description:
       'CantoKeys is a Cantonese-first iOS keyboard for Jyutping input, fast Traditional Chinese candidates, local learning, fuzzy input options, and privacy-first settings.',
-    appStoreUrl: 'https://apps.apple.com/us/app/cantokeys/id6747817415',
+    appStoreUrl: 'https://apps.apple.com/app/cantokeys/id6747817415',
     pageUrl: 'apps/cantokeys/'
   },
   {
@@ -63,7 +63,7 @@ const apps = [
     tagline: 'Clean Klondike solitaire with daily challenges and smart hints.',
     description:
       'Solitide is a focused iPhone solitaire game with Draw 1, Draw 3, winnable deals, daily challenges, solver-backed hints, undo, stats, themes, and achievements.',
-    appStoreUrl: 'https://apps.apple.com/us/app/solitide/id6769714217',
+    appStoreUrl: 'https://apps.apple.com/app/solitide/id6769714217',
     pageUrl: 'apps/solitide/'
   },
   {
@@ -75,7 +75,7 @@ const apps = [
     tagline: 'Face blur for privacy-safe photo and video sharing.',
     description:
       'Monster Blur helps creators and everyday users detect and mask faces in photos and videos, review before export, and share media with better privacy controls.',
-    appStoreUrl: 'https://apps.apple.com/us/app/monster-blur-camera/id6747309460',
+    appStoreUrl: 'https://apps.apple.com/app/monster-blur-camera/id6747309460',
     pageUrl: 'apps/monster-blur/'
   },
   {
@@ -87,7 +87,7 @@ const apps = [
     tagline: 'Fast mental math games with adaptive difficulty.',
     description:
       'Quick Math Duel is a speed-focused math game with Speed Tap, Numpad, True or False, adaptive difficulty, daily challenges, streaks, stats, and leaderboards.',
-    appStoreUrl: 'https://apps.apple.com/us/app/quick-math-challenge/id6747409960',
+    appStoreUrl: 'https://apps.apple.com/app/quick-math-challenge/id6747409960',
     pageUrl: 'apps/quick-math-duel/'
   },
   {
@@ -99,7 +99,7 @@ const apps = [
     tagline: 'Swipe-based camera roll cleanup.',
     description:
       'Sweeep helps people review photos quickly, queue unwanted shots, confirm the queue, and safely delete from the iOS photo library.',
-    appStoreUrl: 'https://apps.apple.com/us/app/sweeep-photo-cleaner/id6747187567',
+    appStoreUrl: 'https://apps.apple.com/app/sweeep-photo-cleaner/id6747187567',
     pageUrl: 'apps/sweeep/'
   },
   {
@@ -135,7 +135,7 @@ const apps = [
     tagline: 'Neon snake with modes, combos, skins, and daily challenges.',
     description:
       'Snek Quest is a polished snake game with Classic, Daily, Wrap, and Hard modes, combo scoring, unlockable skins, friend challenges, and leaderboards.',
-    appStoreUrl: 'https://apps.apple.com/us/app/snek-quest/id6769659366',
+    appStoreUrl: 'https://apps.apple.com/app/snek-quest/id6769659366',
     pageUrl: 'apps/snek-quest/'
   },
   {
@@ -147,7 +147,7 @@ const apps = [
     tagline: 'Match-3 puzzle battles with daily and multiplayer modes.',
     description:
       'Three3Three is a dark neon match-3 puzzle game with Blitz, Daily, Classic, Endless, and real-time VS Match modes.',
-    appStoreUrl: 'https://apps.apple.com/us/app/three3three/id6769578801',
+    appStoreUrl: 'https://apps.apple.com/app/three3three/id6769578801',
     pageUrl: 'apps/three3three/'
   },
   {
@@ -159,7 +159,7 @@ const apps = [
     tagline: 'Dynasty strategy cards built around choice and consequence.',
     description:
       'The Emperor is a strategy card game about ruling a dynasty through fast decisions, court pressure, daily edicts, archives, and leaderboard competition.',
-    appStoreUrl: 'https://apps.apple.com/us/app/the-emperors-dynasty/id6747696323',
+    appStoreUrl: 'https://apps.apple.com/app/the-emperors-dynasty/id6747696323',
     pageUrl: 'apps/the-emperor/'
   },
   {
@@ -171,7 +171,7 @@ const apps = [
     tagline: 'Calm Chinese divination based on 邵康節神算卦訣.',
     description:
       '邵康節神算卦訣 lets users ask a focused question, receive a traditional Chinese divination result, unlock a plain-language explanation, and save or share readings.',
-    appStoreUrl: 'https://apps.apple.com/us/app/%E9%82%B5%E5%BA%B7%E7%AF%80%E7%A5%9E%E7%AE%97%E5%8D%A6%E8%A8%A3/id1086469673',
+    appStoreUrl: 'https://apps.apple.com/app/%E9%82%B5%E5%BA%B7%E7%AF%80%E7%A5%9E%E7%AE%97%E5%8D%A6%E8%A8%A3/id1086469673',
     pageUrl: 'apps/siuhongzit/'
   },
   {
@@ -183,7 +183,7 @@ const apps = [
     tagline: 'Polished block puzzle with multiple modes, power-ups, and daily progression.',
     description:
       'Blockade is a polished block puzzle game inspired by block blast gameplay, with Classic, Easy, Power-Up, Quest, and Zen modes, plus leaderboards, streaks, and themes.',
-    appStoreUrl: '',
+    appStoreUrl: 'https://apps.apple.com/app/blockade-block-puzzle/id6769700533',
     pageUrl: 'apps/blockade/'
   },
   {
@@ -231,7 +231,7 @@ const apps = [
     tagline: 'Cantonese slang and soundboard-style entertainment.',
     description:
       'Canto Cursing is a lightweight Cantonese entertainment app for Hong Kong slang, funny phrases, and shareable soundboard moments.',
-    appStoreUrl: 'https://apps.apple.com/us/app/canto-cursing/id1070983856',
+    appStoreUrl: 'https://apps.apple.com/app/canto-cursing/id1070983856',
     pageUrl: 'apps/cantocursing/'
   }
 ];
