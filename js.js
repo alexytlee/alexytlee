@@ -111,7 +111,7 @@ const apps = [
     tagline: 'Daily quotes, widgets, streaks, and shareable motivation cards.',
     description:
       'MindRocket is a daily motivational quotes app with curated authors, editorial portraits, widgets, achievements, streaks, and polished share cards.',
-    appStoreUrl: '',
+    appStoreUrl: 'https://apps.apple.com/us/app/mindrocket/id6769752995',
     pageUrl: 'apps/mindrocket/'
   },
   {
@@ -219,7 +219,7 @@ const apps = [
     tagline: 'Gentle language-centric wellbeing app with supportive short-form content.',
     description:
       '暖言 is a gentle language-centric wellbeing app designed for supportive short-form reading moments with low cognitive load and high daily return potential.',
-    appStoreUrl: '',
+    appStoreUrl: 'https://apps.apple.com/us/app/%E6%9A%96%E8%A8%80-%E6%AF%8F%E6%97%A5%E7%99%82%E7%99%92%E8%AA%9E%E9%8C%84/id6770147612',
     pageUrl: 'apps/nuanyan/'
   },
   {
@@ -468,4 +468,3 @@ document.addEventListener('click', (event) => {
     document.querySelectorAll('.desktop-icon').forEach((icon) => icon.classList.remove('selected'));
   }
 });
-
