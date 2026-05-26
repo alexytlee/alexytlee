@@ -115,16 +115,16 @@ const apps = [
     pageUrl: 'apps/mindrocket/'
   },
   {
-    id: 'flapeh',
-    name: 'FlapEH!',
+    id: 'maple-beaver',
+    name: 'Maple Beaver',
     category: 'Arcade Game',
-    icon: 'img/apps-webp/flapeh.webp',
-    fallback: 'Eh',
-    tagline: 'Canadian flappy beaver arcade with poutine and maple syrup.',
+    icon: 'img/apps-webp/maple-beaver.webp',
+    fallback: 'MB',
+    tagline: 'Canadian beaver arcade with poutine and maple syrup.',
     description:
-      'FlapEH! is a Canadian arcade game where a beaver speeds up over time, collects poutine to slow down, and grabs maple syrup for invincibility.',
+      'Maple Beaver is a Canadian arcade game where a beaver speeds up over time, collects poutine to slow down, and grabs maple syrup for invincibility.',
     appStoreUrl: '',
-    pageUrl: 'apps/flapeh/'
+    pageUrl: 'apps/maple-beaver/'
   },
   {
     id: 'snek-quest',
