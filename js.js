@@ -187,30 +187,6 @@ const apps = [
     pageUrl: 'apps/blockade/'
   },
   {
-    id: 'capygotchi',
-    name: 'Capygotchi',
-    category: 'Virtual Pet',
-    icon: 'img/apps-webp/capygotchi.webp',
-    fallback: 'C',
-    tagline: 'Cozy capybara companion with widgets, rituals, and walking-based rewards.',
-    description:
-      'Capygotchi is a cozy capybara companion app with widget-first care, gentle daily rituals, walking adventure rewards, collectibles, and progression designed for calm daily return.',
-    appStoreUrl: '',
-    pageUrl: 'apps/capygotchi/'
-  },
-  {
-    id: 'near-play',
-    name: 'Near Play',
-    category: 'Local Multiplayer',
-    icon: 'img/apps-webp/near-play.webp',
-    fallback: 'NP',
-    tagline: 'Offline two-player game collection with nearby local play.',
-    description:
-      'Near Play is an offline two-player game collection for short local sessions using MultipeerConnectivity over nearby WiFi and Bluetooth, with no internet or account required.',
-    appStoreUrl: '',
-    pageUrl: 'apps/near-play/'
-  },
-  {
     id: 'nuanyan',
     name: '暖言',
     category: 'Wellbeing',
