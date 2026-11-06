@@ -1330,3 +1330,33 @@ button {
 .about-email-line a:hover {
   text-decoration: underline;
 }
+
+.dream-only .menu-bar,
+.dream-only .desktop-icon,
+.dream-only .window:not(#dreamWindow) {
+  display: none;
+}
+
+.dream-only .desktop-area {
+  height: 100vh;
+  height: 100dvh;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 0;
+}
+
+.dream-only #dreamWindow {
+  position: absolute;
+  top: 50% !important;
+  left: 50% !important;
+  right: auto !important;
+  display: block;
+  width: min(680px, calc(100vw - 32px)) !important;
+  margin: 0;
+  transform: translate(-50%, -50%) !important;
+  animation: none;
+}
+
+.dream-only #dreamWindow .dream-card img {
+  min-width: 0;
+}
